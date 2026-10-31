@@ -330,7 +330,7 @@
     },
   }
   var PEAK_SLIDERS = [
-    { key: 'h', name: 'Height above sea level', unit: ' m', min: 300, max: 5000, step: 50, hint: 'H: how tall the summit stands above the base.' },
+    { key: 'h', name: 'Height above base', unit: ' m', min: 300, max: 5000, step: 50, hint: 'H: how tall the summit stands above the base.' },
     { key: 'sx', name: 'Spread along the ridge', unit: ' km', min: 3, max: 40, step: 0.5, hint: 'σ₁: how far it stretches along its long axis.' },
     { key: 'sy', name: 'Spread across the ridge', unit: ' km', min: 3, max: 40, step: 0.5, hint: 'σ₂: how far it stretches the other way. Make σ₁ = σ₂ for a round peak.' },
     { key: 'angle', name: 'Direction of the ridge', unit: '°', min: 0, max: 180, step: 1, hint: 'Angle of the long axis, anticlockwise from east.' },
@@ -549,7 +549,7 @@
 
   function initMountain() {
     var host = $('mm-sliders')
-    var all = [{ key: 'base', name: 'Height above sea level (the plateau)', unit: ' m', min: 0, max: 4500, step: 100, hint: 'The height of the ground the peaks stand on.', global: true }].concat(PEAK_SLIDERS)
+    var all = [{ key: 'base', name: 'Height above the base (the plateau)', unit: ' m', min: 0, max: 4500, step: 100, hint: 'The height of the ground the peaks stand on.', global: true }].concat(PEAK_SLIDERS)
     all.forEach(function (def) {
       var out = el('span', { class: 'val' })
       var input = el('input', { type: 'range', id: 'mm-' + def.key, min: def.min, max: def.max, step: def.step, 'aria-describedby': 'mm-hint-' + def.key })
